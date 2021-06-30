@@ -3,7 +3,7 @@ Hunter Java Work - Folder 1
 Nim Game
 Creator:  Alex Moore
 Date:  6-30-21
-Initial draft created collaboratively by 
+Initial draft created collaboratively with 
 */
 
 import java.io.*;
