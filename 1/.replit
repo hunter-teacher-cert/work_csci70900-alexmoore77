@@ -1,2 +1,0 @@
-language = "java"
-run = "javac Nim.java; java Nim;"

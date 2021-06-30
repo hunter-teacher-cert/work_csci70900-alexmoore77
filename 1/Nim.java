@@ -1,7 +1,9 @@
 /*
-1-Nim
-By Alex Moore
-Collaborators:  The following classmates worked on an early version of this, and I then added to it significantly:  Chris O'Brien, Daiana, Mamudu Wally, and Marina Moschenko 
+Hunter Java Work - Folder 1
+Nim Game
+Creator:  Alex Moore
+Date:  6-30-21
+Initial draft created collaboratively by 
 */
 
 import java.io.*;
@@ -11,7 +13,6 @@ public class Nim{
 public static void main(String[] args){
   int bag=12;
   int turn = 0;
-  
   
   System.out.println("*********************");
 	
