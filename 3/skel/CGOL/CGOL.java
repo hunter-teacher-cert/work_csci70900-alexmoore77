@@ -132,11 +132,21 @@ return totalNeighbors;
      (alive 'X', dead ' ')
   */
   public static char getNextGenCell(char[][] board,int r, int c) {
-    if (countNeighbours(board, r, c)==2
- || countNeighbours(board, r, c)==3)
+
+//
+if (board[r][c]=='X' && 
+    (countNeighbours(board, r, c)==2 || countNeighbours(board, r, c)==3)
+)
 return 'X';
-//else return '\0';
+
+else if ((board[r][c]==' '|| board[r][c]=='\0')&& 
+    countNeighbours(board, r, c)==3)
+return 'X';
+
 else return '\0';
+
+
+
 
 //board [5][10] has an X but should be blank - why?
 
@@ -188,9 +198,11 @@ System.out.println(countNeighbours(board,5,5));
     setCell(board, 10, 5, 'X');
     setCell(board, 10, 6, 'X');
 
+    /*
     setCell(board, 15, 12, 'X');
     setCell(board, 16, 12, 'X');
     setCell(board, 17, 12, 'X');
+    */
     // TASK:
     // Once your initial version is running,
     // try out different starting configurations of living cells...
