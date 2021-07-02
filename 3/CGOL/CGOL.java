@@ -104,19 +104,19 @@ if (board[r][c+1]=='X')
 totalNeighbors++;
 };
 
-if (c>0 && r<24)
+if (c>0&&r>24)
 {
 if (board[r+1][c-1]=='X')
 totalNeighbors++;
 };
 
-if (r<24)
+if (r>24)
 {
 if (board[r+1][c]=='X')
 totalNeighbors++;
 };
 
-if (r<24 && c<24)
+if (r>24 && c>24)
 {
 if (board[r+1][c+1]=='X')
 totalNeighbors++;
@@ -132,16 +132,10 @@ return totalNeighbors;
      (alive 'X', dead ' ')
   */
   public static char getNextGenCell(char[][] board,int r, int c) {
-
     if (countNeighbours(board, r, c)==2
  || countNeighbours(board, r, c)==3)
 return 'x';
-else return '\0';
-
-/*
-System.out.println("Cell " + r+ "," + c+" has this # of neighbors: "+countNeighbours(board,r,c));
-*/
-//
+else return ' ';
 
   }
 
@@ -149,29 +143,24 @@ System.out.println("Cell " + r+ "," + c+" has this # of neighbors: "+countNeighb
   //generate new board representing next generation
   public static char[][] generateNextBoard(char[][] board) {
     
-char[][] nextGenBoard=new char[25][25];
 
 for (int i=0;i<25;i++)
 for (int j=0;j<25;j++)
 {
 //possible that we need to make a new board?
 
-nextGenBoard[i][j]=
+board[i][j]=
 getNextGenCell(board,i,j);
 
 }
 
-return nextGenBoard;
+return board;
   }
 
 
   public static void main( String[] args ){
 
-    /*
-    int sampleNumber=5;
-    int sampleLetter=(char) sampleNumber;
-    System.out.println("Sample number converted to a character is "+ sampleLetter);
-    */
+    
     char[][] board;
     board = createNewBoard(25,25);
 
@@ -181,13 +170,9 @@ return nextGenBoard;
 System.out.println(countNeighbours(board,5,5));
 */
      //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//breathe life into some cells:
-    setCell(board, 10, 4, 'X');
-    setCell(board, 10, 5, 'X');
-    setCell(board, 10, 6, 'X');
-
-     setCell(board, 15, 12, 'X');
-    setCell(board, 16, 12, 'X');
-    setCell(board, 17, 12, 'X');
+    setCell(board, 0, 0, 'X');
+    setCell(board, 0, 1, 'X');
+    setCell(board, 1, 0, 'X');
     // TASK:
     // Once your initial version is running,
     // try out different starting configurations of living cells...
