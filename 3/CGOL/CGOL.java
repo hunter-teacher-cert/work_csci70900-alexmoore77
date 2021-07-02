@@ -30,10 +30,15 @@ public class CGOL
   //initialize empty board (all cells dead)
   public static char[][] createNewBoard(int rows, int cols) {
 
-   
     char [][] newBoard=new char[rows][cols];
 
-
+    for (int i=0;i<newBoard.length;i++)
+      {
+        for (int j=0;j<newBoard[0].length;j++)
+          {
+            System.out.print(" ");
+          } //for int j
+      }
     return newBoard;
   }
 
