@@ -132,14 +132,17 @@ return totalNeighbors;
      (alive 'X', dead ' ')
   */
   public static char getNextGenCell(char[][] board,int r, int c) {
-
     if (countNeighbours(board, r, c)==2
  || countNeighbours(board, r, c)==3)
-return 'x';
+return 'X';
+//else return '\0';
 else return '\0';
+
+//board [5][10] has an X but should be blank - why?
 
 /*
 System.out.println("Cell " + r+ "," + c+" has this # of neighbors: "+countNeighbours(board,r,c));
+return '\0';
 */
 //
 
@@ -185,7 +188,7 @@ System.out.println(countNeighbours(board,5,5));
     setCell(board, 10, 5, 'X');
     setCell(board, 10, 6, 'X');
 
-     setCell(board, 15, 12, 'X');
+    setCell(board, 15, 12, 'X');
     setCell(board, 16, 12, 'X');
     setCell(board, 17, 12, 'X');
     // TASK:
@@ -203,3 +206,63 @@ System.out.println(countNeighbours(board,5,5));
   }//end main()
 
 }//end class
+/**
+   DEMO
+   animation in the terminal
+   USAGE:
+   Make this file your own, and comment liberally as you explore...
+   Read for understanding.
+   Skim over delay(). Focus on animate() and main().
+   Jot down / discuss predictions of what you will see when you run it.
+   Run.
+   Reconcile expectation with observation.
+ */
+
+
+/*
+public class Animate
+{
+
+  // pause for n milliseconds
+  public static void delay(int n) {
+    try {
+      Thread.sleep(n);
+    }
+    catch(InterruptedException e) {}
+  }
+
+
+  // "repaint" by using an ANSI control character to
+  // repeatedly place the cursor at the origin (upper left)
+  public static void animate(int n) {
+    //clear screen, place cursor at origin (upper left)
+    System.out.print("[0;0H\n");
+
+    System.out.println("we are aaanimaniacs " + n);
+
+    // After you have predicted/observed/reconciled
+    // behavior of the preceding line,
+    // comment it out,
+    // uncomment the for loop below, and
+    // re-apply your process.
+
+    /*
+    for( int i=n; i > 0; i-- ) {
+      System.out.println("we are aaanimaniacs " + i);
+    }
+    
+
+    delay(1000);
+  }
+
+
+  // run 20 frames of animation
+  public static void main( String[] args ) {
+
+    for (int frame = 0; frame < 20; frame++) {
+      animate(frame);
+    }
+
+  }//end main()
+*/
+//}//end class
