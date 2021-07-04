@@ -1,4 +1,4 @@
-//Group members:  Alex Moore, Diana, Eduardo
+//Group members:  Alex Moore, Daiana, Eduardo
 //Comments:  Making fine progress - everything pretty intuitive so far.  We took some time to understand the Game of Life before diving into coding.
 /*List of variables
 r/c are row and col
