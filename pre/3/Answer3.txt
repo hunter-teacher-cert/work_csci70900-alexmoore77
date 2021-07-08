@@ -1,0 +1,10 @@
+Hunter College Pre-Work - Pre03 Alexander Moore
+Think Java 1st Ed.
+Chapter 4 - Exercise 1
+
+1.		The output of the program follows: No, I wug.
+You wugga wug.
+I wug.
+2.	A stack diagram That shows the state of the program the first time ping is invoked follows:
+
+3.	If you invoke baffle(); at the end of the ping() method, the two methods will keep calling each other and add to the stack indefinitely without the code for either fully concluding.
