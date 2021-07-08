@@ -1,4 +1,8 @@
 /**
+  Alex Moore and Benson Leung
+
+  Need to still remove empty values 
+
   Is a constructor created by default?
   How many array elements are necesary?
   Can we create two constructors with identical parameters?
@@ -17,6 +21,10 @@
    - auto-grow capacity if necessary
  **/
 
+//Example of why instance variables should be private
+//SuperArray sa=new SuperArray();
+//sa.data[5]=3;
+
 import java.io.*;
 import java.util.*;
 
@@ -27,13 +35,14 @@ public class SuperArray
   private int numberElements;   //number of "meaningful" elements
 
 
+
+//Constructor:  Using new AND has the same name as the class in which it appears
+
   // ~~~~~~~~~~~~~~~ CONSTRUCTORS ~~~~~~~~~~~~~~~
   //overloaded constructor -- allows specification of initial capacity
   public SuperArray( int size )
   {
     data = new int[size];
-  
-    //numberElements=0;
   }
 
  
@@ -42,7 +51,6 @@ public class SuperArray
   public SuperArray()
   {
     data = new int[10];
-
     //numberElements=0;
   }
 
@@ -60,17 +68,16 @@ public class SuperArray
     
     // increment numberElements
     numberElements++;
-
-
   }//end add()
+
 
   // New add method that takes an index parameter
   public void add(int index, int value)
   {
     // test to see if we need to grow, then grow
     this.grow(index);
-    //this.grow();
-    // add item
+   
+    // add item - moves values to the right
     for (int i = numberElements; i>=index; i--){
       data[i+1]=data[i];
     }
@@ -82,6 +89,20 @@ public class SuperArray
 
   }//end  new add()
 
+// New remove method that takes an index parameter
+  public void remove(int index)
+  {
+    // remove item
+    for (int i = index; i<numberElements; i++){
+      data[i]=data[i+1];
+    }
+    
+    // decrement numberElements
+    numberElements--;
+
+  }//end  new add()
+
+
   //Method to test if array is empty
   public boolean isEmpty()
   {
@@ -91,9 +112,15 @@ public class SuperArray
 
   public int get(int index)
   {
-    return 0; //default return
+    return this.data[index]; //default return
+  }// end of get()
 
-  }
+public void set(int index, int value)
+  {
+    this.data[index] = value;
+
+  }// end of get()
+
 
   // Method for printing Array
   public String toString()
@@ -140,6 +167,7 @@ public class SuperArray
     {
       //do nothing
     }
+
     // create a new array with extra space
     // Q: How did you decide how much to increase capacity by?
 
@@ -148,6 +176,7 @@ public class SuperArray
     // point data to the new array
     // Q: How does this look when illustrated using encapsulation diagram?
   }//end grow()
+
 
 // New grow method to check if index is greater than current array size or if adding a value to a full array
 

@@ -1,3 +1,5 @@
+// Alex Moore and Benson Leung
+
 import java.io.*;
 import java.util.*;
 
@@ -40,6 +42,19 @@ x+1 = 1 + x (What is the value, and assign this to the address of the variable o
     sa.add(27, 100);
     System.out.println(sa);
 
+    System.out.println(sa.get(5)); // Test get()
+    sa.set(5, 100);
+    System.out.println(sa); // Test set()
+
+    System.out.println("\nTesting remove at 0, 5, and 15 (end)");
+    sa.remove(0);
+    System.out.println(sa);
+    sa.remove(5);
+    System.out.println(sa);
+    sa.remove(15);
+    System.out.println(sa);
+
+
   
   
 
@@ -56,13 +71,7 @@ x+1 = 1 + x (What is the value, and assign this to the address of the variable o
     
     
     
-    System.out.println("\nTesting remove at 0, 5, and 15 (end)");
-    sa.remove(0);
-    System.out.println(sa);
-    sa.remove(5);
-    System.out.println(sa);
-    sa.remove(15);
-    System.out.println(sa);
+    
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   }//main
