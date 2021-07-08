@@ -4,9 +4,10 @@ First name: Alexander
 Github username: alexmoore77
 Mancala - Day[2]
 Team:  Alexander Moore, Michelle Persaud, Dwayne Levene
+Follow-up conversation and collaboration with Steph, Mamudu, Benson
 Objective:  Create a game of Mancala with a working AI.
 Skills:  arrays
-Comments:  It was challenging to make this game because we struggled to find a working group approach.  I slowed down considerably and attempted to explain step by step what I was doing, but this prevented us from being able to finish the project in a timely fashion.  
+ 
 */
 
 
@@ -32,11 +33,10 @@ import java.util.*;
 public class Mancala {
 
 
-/*This function displays it conceptually as a Mancala board should appear rather than how it is represented by the computer in memory.*/
+/*This method displays the board conceptually as a Mancala board should appear rather than how it is represented by the computer in memory.*/
     public static void drawBoardForUser(int[] gameBoard){
 
 System.out.print("    ");
-
 System.out.println("AI");
 System.out.print("    ");System.out.print("#13 ");
 System.out.print("#12 ");
@@ -54,9 +54,9 @@ System.out.print("["+gameBoard[9]+"] ");
 System.out.print("["+gameBoard[8]+"] ");
 //right m
 System.out.print("\n");
-System.out.print("#0 ");
-System.out.print("                          ");
-System.out.println("#7 ");
+System.out.print("#0-AI");
+System.out.print("                        ");
+System.out.println("#7-Me");
 
 System.out.print("<"+gameBoard[0]+">"); 
 System.out.print("                          ");
@@ -89,30 +89,40 @@ System.out.println();
 
 public static int userChoice(int[] gameBoard)
 {
+  int choice=-1;
+  int counter=-1;
+  while(choice<1 || choice>6)
+  {
   System.out.println("Please select pod 1 -6");
   Scanner myInput = new Scanner(System.in);
   //what user types in is assigned to user
-  int userPodChoice=myInput.nextInt();
-  int counter=gameBoard[userPodChoice];
+  choice=myInput.nextInt();
+  
+  }
+
+  counter=gameBoard[choice];
   
   // increment bins;
 int moves=0;
-while (gameBoard[userPodChoice]>0)
+while (gameBoard[choice]>0)
 
 {
 moves=moves+1;
 
-gameBoard[(userPodChoice+moves)%14]=
-gameBoard[(userPodChoice+moves)%14] + 1;
+//Add to the new pod and reduce from the original pod choice iff the pod is not #0- You must skip the AI's mancala and not place a stone there.
+if (((choice+moves)%14)!=0)
+{
+gameBoard[(choice+moves)%14]=
+gameBoard[(choice+moves)%14] + 1;
 
 //the current index + 1
 //subtract 1 from user hand as each stone is added to next pod
-gameBoard[userPodChoice]=gameBoard [userPodChoice]-1;
-  
+gameBoard[choice]=gameBoard [choice]-1;
+};
 
 }//while
 
-  return userPodChoice;
+  return choice;
 }//userChoice
 
 
@@ -121,28 +131,32 @@ public static int AIChoice(int[] gameBoard)
 {
   
 Random rn = new Random();
-int counter= rn.nextInt(6) + 8;
+int AIChoice= rn.nextInt(6) + 8;
 
-System.out.println("I selected bucket #"+counter);  
+System.out.println("I selected bucket #"+AIChoice);  
   // increment bins;
 int moves=0;
-while (gameBoard[counter]>0)
+while (gameBoard[AIChoice]>0)
 
 {
 moves=moves+1;
 
-gameBoard[(counter+moves)%14]=
-gameBoard[(counter+moves)%14] + 1;
+//Add to the new pod and reduce from the original pod choice iff the pod is not #7- The AI must skip your mancala and not place a stone there.
+if (((AIChoice+moves)%14)!=0)
+{
+
+gameBoard[(AIChoice+moves)%14]=
+gameBoard[(AIChoice+moves)%14] + 1;
 
 //the current index + 1
 //subtract 1 from user hand as each stone is added to next pod
-gameBoard[counter]=gameBoard[counter]-1;
-  
+gameBoard[AIChoice]=gameBoard[AIChoice]-1;
+};//if 
 
 }//while
 
 
-  return counter;
+  return AIChoice;
 }//AIChoice
 
 
@@ -177,6 +191,8 @@ mancalaBoard[counter]=4;// short cut to set each circle on the board to equal to
   };//for
 
 mancalaBoard[7]=mancalaBoard[0]=0; //7-user 0-Ai
+
+
 
   //diplay the displayMancalaBoard
 
