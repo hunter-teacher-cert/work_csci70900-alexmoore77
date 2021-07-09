@@ -91,16 +91,18 @@ public class SortDemo{
 
 
     public void sort(){
-	     int i; // declare variable for loop
-	     for (i=0;i < data.size()-1; i++){ // for loop to iterate through data
-         int currMinIndex = findSmallestIndex(i+1); // initializing variable to store current Minimum index
-      // find the smallest index from i to end --use findSmallestIndex
-	    // your code here
+      int i; // declare variable for loop
+      for (i=0;i < data.size()-1; i++){ // for loop to iterate through data
+        int currMinIndex = findSmallestIndex(i+1); // initializing variable to store current Minimum index
+        // find the smallest index from i to end --use findSmallestIndex
+        // your code here
+        if(data.get(currMinIndex) < data.get(i)) { // if value at currMinIndex is less than value at i.....
+          // swap the item at that index and i
+          // your code here
+          swap(i, currMinIndex); // ... swap values in ArrayList indecies
+        }
 
-	    // swap the item at that index and i
-	    // your code here
-
-	     }
+      }
     }
 
     /*
@@ -111,10 +113,10 @@ public class SortDemo{
     */
 
     // method for swapping two values
-    public void swap(int a, int b) {
-      int temp = a;
-      data.set(0, b)
-      
+    public void swap(int aIndex, int bIndex) {
+      int temp = data.get(aIndex); // assigns temp var with value at aIndex
+      data.set(aIndex, data.get(bIndex)); // overwrites value at aIndex with value from bIndex
+      data.set(bIndex, temp); // overWrites value at bIndex with temp var which held value at aIndex
     }
 
 
@@ -122,35 +124,52 @@ public class SortDemo{
 
     /* If you finish the lab early you can get started on this */
     public int linearSearch(int value){
-	// loop through the ArrayList data
-	// and if the value you're searchign for is in the ArrayList, return it.
-	// return -1 if it isn't there.
+      // loop through the ArrayList data
+      // and if the value you're searchign for is in the ArrayList, return it.
+      // return -1 if it isn't there.
+      for(int i = 0; i < data.size(); i++){
+        if(data.get(i) == value) {
+          return value; // replace this return
+        }
+      }
+      return -1;
 
-
-	return 0; // replace this return
     }
 
     /* If you finish the lab early you can get started on this */
     public int binarySearch(int value){
-	boolean replacethiswithrealexpression=false;
+	boolean isValueEqualToMid = false;
 	int lowerIndex = 0;
 	int upperIndex = data.size();
 	int middleIndex = data.size()/2;
 
-	/* if upper crosses lower it's not there and the lop should exit the loop
+
+  // is middleIndex == value - return value; -> exit loop
+  // if value is higher -> low == middle -> mid = hi - lo
+  // else if value is lower -> high == middle -> mid == mid/2
+
+
+
+	/* if upper crosses lower it's not there and the loop should exit the loop
 	   and if the item is at middle you should exit the loop
 
            you have to replace the "replacethiswithrealexpression" boolean
            with a correct expression based on lowerIndex and upperIndex
 	*/
-	while (replacethiswithrealexpression)
+	while (!isValueEqualToMid)
 	    {
 		// update lower and upper.
 		// remember if value is less than data.get(middleIndex) you want to search next time
 		// from lower to the middle and otherwise from the middle to the upper.
 		//
 		// then update middleIndex based on new lowerIndex and upperIndex.
-
+      if(middleIndex == value) {
+        return value;
+      } else if (value > middleIndex) {
+        // if value is higher -> low == middle -> mid = hi - lo
+      } else if(value > middleIndex) {
+        //if value is lower -> high == middle -> mid == mid/2
+      }
 	    }
 
 	/* replace this return to either return the value if it was found and -1
