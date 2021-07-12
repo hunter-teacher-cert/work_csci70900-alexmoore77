@@ -68,6 +68,7 @@ public class SortDemo{
 
        int smallestValue=this.data.get(start); // set smallestValue to ArrayList value at start index
 
+       //may or may not present an issue for certain data sets
        for (int i= start + 1;i<this.data.size();i++) // loop starting at start value + 1 going to length of ArrayList
        {
          if (this.data.get(i) < smallestValue) // if value in ArrayList at i index is less than current smallestValue...
@@ -123,6 +124,7 @@ public class SortDemo{
 
 
     /* If you finish the lab early you can get started on this */
+    //In what context would a Boolean return value be superior
     public int linearSearch(int value){
       // loop through the ArrayList data
       // and if the value you're searchign for is in the ArrayList, return it.
@@ -143,7 +145,13 @@ public class SortDemo{
 	int upperIndex = data.size();
 	int middleIndex = data.size()/2;
 
+if (data.get(middleIndex)==value)
+return value;
 
+smallerArray=new ArrayList<Integer>(data.size()/2);
+smallerArray=
+
+return binarySearch()
   // is middleIndex == value - return value; -> exit loop
   // if value is higher -> low == middle -> mid = hi - lo
   // else if value is lower -> high == middle -> mid == mid/2
