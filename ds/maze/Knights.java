@@ -78,17 +78,17 @@ public class Knights{
 	// here, when do we know when we're done?
 	// HINT: you have an nxn board and are done when you've visited
 	// every board location
-	if (count>CHANGETHIS){
+	if (count>64){
 	    System.out.println(this);
 	    return true;
 	}
 
 
-	// this should return false when we're at an illegal locaiton
+	// this should return false when we're at an illegal location
 	// change CHANGETHIS to the appropriate boolean
 	// HINT: we are tracking our moves in the board
 	// and also built that border of -1 values.
-	if (CHANGETHIS){
+	if (board[col][row]){
 	    return false;
 	}
 	

@@ -148,10 +148,12 @@ public class SortDemo{
 if (data.get(middleIndex)==value)
 return value;
 
-smallerArray=new ArrayList<Integer>(data.size()/2);
-smallerArray=
+if (data.get(middleIndex)<value)
+return binarySearch();
 
-return binarySearch()
+if (data.get(middleIndex)>value)
+return binarySearch();
+
   // is middleIndex == value - return value; -> exit loop
   // if value is higher -> low == middle -> mid = hi - lo
   // else if value is lower -> high == middle -> mid == mid/2
@@ -173,9 +175,11 @@ return binarySearch()
 		// then update middleIndex based on new lowerIndex and upperIndex.
       if(middleIndex == value) {
         return value;
-      } else if (value > middleIndex) {
+      } 
+      else if (value > middleIndex) {
         // if value is higher -> low == middle -> mid = hi - lo
-      } else if(value > middleIndex) {
+      } 
+      else if(value > middleIndex) {
         //if value is lower -> high == middle -> mid == mid/2
       }
 	    }
