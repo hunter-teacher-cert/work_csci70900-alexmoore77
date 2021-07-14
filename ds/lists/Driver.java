@@ -34,12 +34,19 @@ public class Driver{
   // 2. Write the code to insert an "x"
 	//    between the b and the c
 //  Node LX = new Node("x");
+  
+  Node x=new Node("x");
+  x.setNext(L3);
+  L2.setNext(L2);
+  //System.out.println(L.printList());
+  /*
   L2.setNext(new Node("x"));
   L2.getNext().setNext(L);
   String output = L.printList();
   System.out.println(output);
-	// 3. Write the code to delete the c
-
+	*/
+  // 3. Write the code to delete the c
+x.setNext(L4);
 
   }// main
 }//end class
