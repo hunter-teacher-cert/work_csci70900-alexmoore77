@@ -48,5 +48,12 @@ public class Driver{
   // 3. Write the code to delete the c
 x.setNext(L4);
 
+	System.out.println("\n");
+	System.out.println("Llist");
+	System.out.println("-----------");
+
+	Llist ll = new Llist();
+	System.out.println(ll);
+
   }// main
 }//end class
