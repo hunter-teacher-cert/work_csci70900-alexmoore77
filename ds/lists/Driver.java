@@ -52,8 +52,24 @@ x.setNext(L4);
 	System.out.println("Llist");
 	System.out.println("-----------");
 
-	Llist ll = new Llist();
-	System.out.println(ll);
+	Llist ll0Items = new Llist();
+	Llist ll5Items=new Llist(L);
+  System.out.println(ll0Items);
+//System.out.println(ll5Items);
 
+//check to see if list is empty;  want to see if method works
+
+System.out.println(ll0Items);
+System.out.println("Empty status of list ll0Items:" +ll0Items.isEmpty());
+
+/*
+System.out.println(ll5Items);
+System.out.println("Empty status of list ll5Items:" +ll5Items.isEmpty());
+*/
+
+System.out.println("Count status of list ll0Items:" + ll0Items.length());
+/*
+System.out.println("Count status of list ll0Items:" + ll5Items.length());
+  */
   }// main
 }//end class
