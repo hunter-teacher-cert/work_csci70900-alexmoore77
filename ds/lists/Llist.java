@@ -5,17 +5,21 @@ import java.util.*;
 public class Llist{
     private Node front; // the front of the list
 
+
     public  Llist(){
-	front = null;
+	  front = null;
     }
 
     // Add a new node containing data
     // at the front of the list
     public void addFront(String data){
 	// make the new node
-	
-	// point it to what front points to
+	this.front=new Node(data)
+ 
+  ;
 
+	// point it to what front points to
+ this.next=front.next;
 	// point front to the new node
 	
     }
