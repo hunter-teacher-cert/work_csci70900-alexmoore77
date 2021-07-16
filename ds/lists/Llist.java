@@ -67,8 +67,8 @@ front=myFirstNode;
 	    currentNode = currentNode.getNext();
 	}
   
-  
-  return 0;
+  //updated - was 0
+  return numberOfNodes-1;
     }
 
     // returns the item at location index;
@@ -81,8 +81,8 @@ front=myFirstNode;
   //3 types of node contructors
   Node currentNode=new Node("",front); //constructor; makes a new temp node
 
-if (index>this.length())
-return "Error- Linked list length is "+this.length()+" is shorter than that your index of "+index;
+if (index>this.length()) //if index is greater than length of list-->error
+return "Error- Linked list length of "+this.length()+" is shorter than your index of "+index;
 while (currentIndex <index){
 	    currentIndex=currentIndex+1;
 	    currentNode = currentNode.getNext();
@@ -95,6 +95,25 @@ return currentNode.getData();
     // with 0) to value.
     // only sets if the index is within range
     public void set(int index, String value){
+
+	int currentIndex=0; 
+  //3 types of node contructors
+  Node currentNode=new Node("",front); //constructor; makes a new temp node
+
+System.out.println("The index is "+index+", and the length is "+this.length());
+
+if (index>this.length()) //if index is greater than length of list-->error
+{
+System.out.println( "Error- Linked list length of "+this.length()+" is shorter than your index of "+index);
+return;
+};
+while (currentIndex <index){
+	    currentIndex=currentIndex+1;
+	    currentNode = currentNode.getNext();
+	};
+
+
+currentNode.setData(value);
 
     }
 
