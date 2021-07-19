@@ -59,13 +59,17 @@ front=myFirstNode;
       //counter variable to count the number of nodes in the linked list
 	int numberOfNodes=0; 
   //3 types of node contructors
+  //create a temp node to point to and //access the other nodes
   Node currentNode=new Node("",front); //constructor; makes a new temp node
 
-
+//Loop until the last node (end of list) is reached
   while (currentNode != null){
 	    numberOfNodes=numberOfNodes+1;
-	    currentNode = currentNode.getNext();
-	}
+	
+  //Most important idiom
+      currentNode = currentNode.getNext();
+	
+  }
   
   //updated - was 0
   return numberOfNodes-1;
@@ -125,17 +129,58 @@ currentNode.setData(value);
     // the node BEFORE you want to do the insertion.
     public void insert(int index, String value){
 
+  Node currentNode=new Node("",front); //constructor; keeps track of current node
+  Node previousNode=new Node("",front);
+  int currentIndex=0;
+   
+if (index>(this.length()+1)) //if index is greater than length of list-->error
+{
+System.out.println( "Error- Linked list length of "+this.length()+" is shorter than your index of "+index);
+return;
+};
+
+
+// 1) new node must point to the node after the index
+while (currentIndex <(index)){
+	    currentIndex=currentIndex+1;
+	    currentNode = currentNode.getNext();
+	};
+//Now the new node is pointing to one before the index.
+
+//look at pointer, what is the address, set pointer in the new node to the next node (index specified/user provides)
+currentNode.setNext(currentNode.getNext());
+
+currentIndex=0;
+// 2) node before the index must point to the new node.
+while (currentIndex <(index-1)){
+	    currentIndex=currentIndex+1;
+	    previousNode = previousNode.getNext();
+	};
+
+previousNode.next=currentNode;
+
     }
 
     // returns the index of the first item with
     // data value key. Returns -1 if not found
     public int search(String key){
+int currentIndex=0;
+  Node currentNode=new Node("",front); //constructor; keeps 
+
+while (Node!=null){
+	    if (currentNode.getData()==key)
+      return currentIndex;
+      currentIndex=currentIndex+1;	    
+	};
+
 	return -1;
     }
 
     // removes the node at index.
     // does nothing if index out of bounds
     public void remove(int index){
+
+
 
     }
 

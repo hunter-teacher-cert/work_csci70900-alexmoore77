@@ -1,0 +1,38 @@
+Alexander Moore
+Computer Science Teaching Methods
+Hunter College, CUNY
+7-19-21
+
+Instructions:  HW prompt: Day 1 of Netlogo, how do you want to introduce it? (Might include some guided programming, i.e., look at Model X and do something with it. -- Why did you pick X model?) 
+Some other questions: do you want folks to explore openly? Do you want to guide them? 
+Focus on your own metacognition: why would you make the decisions you would make as a teacher in introducing the language? tl;dr - > make a text file (can be a narrative where you describe how you would intro Netlogo and why you would do it that way) (edited) 
+
+	I would introduce Netlogo by making it a mystery to pique student interest:  What can it do, and how does it work?  I would ask each group of three to pick three demo programs.  For each demo program, the student is asked to respond to the following prompts:
+Demo Program #1:  _____________________________
+What input does it take from the user? _____________________________________________________
+____________________________________________________________________________________
+What is the output on the screen?  ________________________________________________________
+____________________________________________________________________________________
+Look at the code, and try to understand a bit about how it works.  Attempt to explain one line of code.  ____________________________________________________________________________________
+____________________________________________________________________________________
+
+For each demo program, the student is asked to respond to the following prompts:
+Demo Program #2:  _____________________________
+What input does it take from the user? _____________________________________________________
+____________________________________________________________________________________
+What is the output on the screen?  ________________________________________________________
+____________________________________________________________________________________
+Look at the code, and try to understand a bit about how it works.  Attempt to explain one line of code.  ____________________________________________________________________________________
+____________________________________________________________________________________
+
+For each demo program, the student is asked to respond to the following prompts:
+Demo Program #3:  _____________________________
+What input does it take from the user? _____________________________________________________
+____________________________________________________________________________________
+What is the output on the screen?  ________________________________________________________
+____________________________________________________________________________________
+Look at the code, and try to understand a bit about how it works.  Attempt to explain one line of code.  ____________________________________________________________________________________
+____________________________________________________________________________________
+
+Explanation:  These questions are designed to be relatively easy to give students credit for completing the work of trying the demos and attempting to understand them without frustrating or overwhelming them.  This also ties to the Create Task for the AP CSP Exam.  I would make recommendations of some that they may want to check out with the option of choosing others if they prefer.  This helps if you have a group that is slow to start.
+If I were to use NetLogo, I would likely use it as a bridge between Snap! in the BJC curriculum, which is wildly popular with even strong students, and AP pseudocode, which has more of a C-like syntax.  Having said this, I would probably be more likely to go with Python as a secondary language as this is the most popular teaching language now, there are fewer debugging issues (no semicolons!), and it has more real world applications.  Adding to this, although this is not a dealbreaker:  Python is already included in multiple College Board-approved AP CSP curricula.

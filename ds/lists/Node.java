@@ -22,6 +22,14 @@ public class Node {
     	this.next = next;
     }//constructor(value, next)
 
+public Node(String value, Node next, String message)
+{
+data=value;
+this.next=next;
+System.out.println(message);
+
+}
+
     public void setData(String value) {
     	data = value;
     }//setData

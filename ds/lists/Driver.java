@@ -89,6 +89,12 @@ System.out.println("Update Item 3 of list ll0Items to -1:" + ll0Items.get(3)+"\n
 
 
 System.out.println("Update Item 3 of list ll5Items to -1:" + ll5Items.get(3)+"\n\n");
+System.out.println("------------");
+ll5Items.insert(3,"new data")
+System.out.println("------------");
+System.out.println("Added new data to list ll5Items:" );
+
+System.out.println("------------");
 
 
   }// main
