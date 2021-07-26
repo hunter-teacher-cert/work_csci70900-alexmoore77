@@ -167,10 +167,10 @@ previousNode.next=currentNode;
 int currentIndex=0;
   Node currentNode=new Node("",front); //constructor; keeps 
 
-while (Node!=null){
+while (currentNode!=null){
 	    if (currentNode.getData()==key)
       return currentIndex;
-      currentIndex=currentIndex+1;	    
+      currentIndex++;	    
 	};
 
 	return -1;

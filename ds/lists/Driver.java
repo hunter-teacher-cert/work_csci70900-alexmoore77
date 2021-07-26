@@ -4,24 +4,10 @@ import java.util.*;
 
 public class Driver{
     public static void main(String[] args) {
-/*
-  Node n;
-	n = new Node();
-	n.setData("Eduardo");
-	Node n2 = new Node("Brian");
-	n.setNext(n2);
-	System.out.println(n);
-	System.out.println(n2);
-	System.out.println(n.getNext());
-	n.getNext().setNext(new Node("Steph"));
-	System.out.println(n2.getNext());
-	System.out.println(n.getNext().getNext());
-*/
-	Node L;
 	// 1.Create a new  list that looks like:
-	//   L->"a"->"b"->"c"->"d"
-  L = new Node("a");
+	//   L->"a"->"b"->"c"->"d"->"e"
 
+	Node L= new Node("a");
   Node L2 = new Node("b");
   L.setNext(L2);
   Node L3 = new Node("c");
@@ -31,16 +17,12 @@ public class Driver{
   Node L5 = new Node("e");
   L4.setNext(L5);
 
-
-
-  // 2. Write the code to insert an "x"
-	//    between the b and the c
-//  Node LX = new Node("x");
-/*  
+  //2. Write the code to insert an "x" between the b and the c
+  
   Node x=new Node("x");
   x.setNext(L3);
   L2.setNext(L2);
-  */
+
   //System.out.println(L.printList());
   /*
   L2.setNext(new Node("x"));
@@ -90,7 +72,7 @@ System.out.println("Update Item 3 of list ll0Items to -1:" + ll0Items.get(3)+"\n
 
 System.out.println("Update Item 3 of list ll5Items to -1:" + ll5Items.get(3)+"\n\n");
 System.out.println("------------");
-ll5Items.insert(3,"new data")
+ll5Items.insert(3,"new data");
 System.out.println("------------");
 System.out.println("Added new data to list ll5Items:" );
 
