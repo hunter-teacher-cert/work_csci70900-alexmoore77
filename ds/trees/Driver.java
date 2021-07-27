@@ -17,6 +17,8 @@ public class Driver {
 
 try 
 {
+t.insert(test);
+
 System.out.println("searchValue="+test+"   BSTree search: " +t.search(test));
 }
 catch (NullPointerException e){
@@ -24,12 +26,22 @@ System.out.println(test+" not in tree");
 } ;
   };//for
 
-  //System.out.println("test");
-  System.out.println("Search for 13:" + t.search(13));
-  System.out.println("Insert 13:");
-  t.insert(13);
-    System.out.println("Search for 13:" + t.search(13));
 
+int test=190;
+t.insert(test);
+try 
+{
+System.out.println("searchValue="+test+"   BSTree search: " +t.search(test));
+}
+catch (NullPointerException e){
+System.out.println(test+" not in tree");
+} ;
+
+t.traverse();
+t.deleteTraverse(5);
 
     }
+
+
+
 }

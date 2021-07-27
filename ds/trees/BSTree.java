@@ -28,6 +28,103 @@ public class BSTree {
 	
 	}
     
+private void inOrderTraverse (TreeNode current)
+{
+
+if (current==null)
+return;
+
+
+//recursively print out the left subtree
+inOrderTraverse(current.getLeft());
+
+//process the current node
+System.out.print(current.getData()+", ");
+
+
+//recursively print out the right subtree
+inOrderTraverse(current.getRight());
+
+}
+
+private void preOrderTraverse (TreeNode current)
+{
+
+if (current==null)
+return;
+
+//process the current node
+System.out.print(current.getData()+", ");
+
+//recursively print out the left subtree
+preOrderTraverse(current.getLeft());
+
+
+//recursively print out the right subtree
+preOrderTraverse(current.getRight());
+
+}
+
+private void postOrderTraverse (TreeNode current)
+{
+
+if (current==null)
+return;
+
+
+//recursively print out the left subtree
+postOrderTraverse(current.getLeft());
+
+//recursively print out the right subtree
+postOrderTraverse(current.getRight());
+
+//process the current node
+System.out.print(current.getData()+", ");
+
+
+}
+
+private void deleteTraverse (int key, TreeNode current, TreeNode previous)
+{
+
+if (current==null)
+return;
+
+//recursively print out the left subtree
+deleteTraverse(key, current.getLeft(), current);
+
+//process the current node
+System.out.println("Current Node:"+current.getData());
+if (current.getData()==key)
+{
+  System.out.println("I found the node to delete: "+current.getData());
+  System.out.println("The left child of this node is "+current.getLeft());
+  System.out.pritnln("The right child of this node is "+current.getRight());
+  if 
+}
+else System.out.println(current.getData() + " is not the node to delete.");
+
+//recursively print out the right subtree
+deleteTraverse(key, current.getRight(), current);
+
+}
+
+public void traverse(){
+  inOrderTraverse(root);
+  System.out.println();
+}
+
+public void deleteTraverse(int key)
+{
+deleteTraverse(key,root,null);
+System.out.println();
+
+}
+
+
+
+
+
 
       public void insert(int key){
 
@@ -50,11 +147,15 @@ public class BSTree {
 		// already in the tree so we can
 		// update this node in some way
 		// and then return
-		return;
+		System.out.println("It's a match!");
+    return;
 	    } else if (frontValue < key){
-		trailer = front;
+		System.out.println("frontValue<key");
+    trailer = front;
 		front = front.getRight();
+    		
 	    } else {
+        System.out.println("frontValue>key");
 		trailer = front;
 		front = front.getLeft();
 	    }
@@ -62,10 +163,11 @@ public class BSTree {
 	if (key > trailer.getData()){
 	    // insert on the right
 	    trailer.setRight(newNode);
+      return;
 	} else {
 	    // insert on left
 	    trailer.setLeft(newNode);
-
+return;
 	}
 	
 	
