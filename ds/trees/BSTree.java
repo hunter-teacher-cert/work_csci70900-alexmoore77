@@ -82,48 +82,100 @@ System.out.println("Current Node:"+current.getData());
 if (current.getData()==key)
 {
   System.out.println("I found the node to delete: "+current.getData());
-  System.out.println("The left child of this node is "+current.getLeft().getData());
-  System.out.println("The right child of this node is "+current.getRight().getData());
+  if (current.getLeft()==null) 
+  System.out.println("The left child of this node is "+current.getLeft());
+else System.out.println("The left child of this node is "+current.getLeft().getData());
+if (current.getRight()==null)
+System.out.println("The right child of this node is "+current.getRight());
+else   System.out.println("The right child of this node is "+current.getRight().getData());
 System.out.println("The value of the previous node is "+previous.getData());
 
 //identify the number of children of the current node
 int numberOfTotalChildren=0;
 int numberOfLeftChildren=0;
 int numberOfRightChildren=0;
-if ((current.getLeft().getData())!=null) 
+if ((current.getLeft())!=null) 
 {
   numberOfTotalChildren++;
 numberOfLeftChildren++;
 };
-if ((current.getRight().getData())!=null) 
+if ((current.getRight())!=null) 
 {
   numberOfTotalChildren++;
   numberOfRightChildren++;
 };
-if (numberOfTotalChildren==0)
-{
 
-};
-
-
+//debugging info
 System.out.println("Current node "+current.getData()+" has "+numberOfTotalChildren+" children!");
 System.out.println("Current node "+current.getData()+" has "+numberOfLeftChildren+" left children!");
 System.out.println("Current node "+current.getData()+" has "+numberOfRightChildren+" right children!");
 
-
 /*
-  if (current.getLeft()==null) 
-  System.out.println(current.getLeft() + " is equal to null.");
-  else if (current.getLeft()!=null)
-  System.out.println(current.getLeft() + " is not equal to null.");
-else System.out.println("Error re: getLeft()!");  
-
-  if (current.getRight()==null) 
-  System.out.println(current.getRight() + " is equal to null.");
-  else if (current.getRight()!=null)
-  System.out.println(current.getRight() + " is not equal to null.");
-else System.out.println("Error re: getLeft()!");  
+Delete Scenario #1:  0 children
+Check the previous node.  
+-If the previous node's left child is equal to the current, set the left child to null.  
+-If the previous node's right child is equal to the current, set the right child to null.
 */
+if (numberOfTotalChildren==0)
+{
+System.out.println(current.getData()+ " has been deleted!");
+if (previous.getRight().getData()==current.getData())
+{
+previous.setRight(null);
+System.out.println("Now the right child of "+previous.getData()+ " is null!");
+}//if
+else if (previous.getLeft().getData()==current.getData())
+{
+previous.setLeft(null);
+System.out.println("Now the left child of "+previous.getData()+ " is null!");
+}//if
+}//if (numberOfTotalChildren==0)
+
+/*Delete Scenario #2:  1 child
+Check the previous node.  
+-If the previous node's left child is equal to the current, set the previous node's left child to the deleted node's child.  
+-If the previous node's right child is equal to the current, set the previous node's right child to the deleted node's child.
+*/
+else if (numberOfTotalChildren==1)
+{
+System.out.println(current.getData()+ " has been deleted!");
+if (previous.getRight().getData()==current.getData() && current.getRight()!=null)
+{
+previous.setRight(current.getRight());
+System.out.println("Now the right child of "+previous.getData()+ " is "+previous.getRight().getData()+"!");
+}//if
+
+else if (previous.getRight().getData()==current.getData() && current.getLeft()!=null)
+{
+previous.setRight(current.getLeft());
+System.out.println("Now the right child of "+previous.getData()+ " is "+previous.getRight().getData()+"!");
+
+}//else if
+
+else if (previous.getLeft().getData()==current.getData() && current.getLeft()!=null)
+{
+previous.setLeft(current.getLeft());
+System.out.println("Now the left child of "+previous.getData()+ " is "+previous.getLeft().getData()+"!");
+
+}//else if
+
+else if (previous.getLeft().getData()==current.getData() && current.getRight()!=null)
+{
+previous.setLeft(current.getRight());
+System.out.println("Now the left child of "+previous.getData()+ " is "+previous.getLeft().getData()+"!");
+
+}//else if
+
+
+
+};//else if numberOfTotalChildren==1
+
+/*Delete Scenario #3:  2 children
+Check the previous node.  
+-If the previous node's left child is equal to the current, set the previous node's left child to the deleted node's child.  
+-If the previous node's right child is equal to the current, set the previous node's right child to the deleted node's child.
+*/
+
 
 }
 else System.out.println(current.getData() + " is not the node to delete.");
