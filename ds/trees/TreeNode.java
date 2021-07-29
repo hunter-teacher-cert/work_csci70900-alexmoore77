@@ -2,11 +2,11 @@ import java.io.*;
 import java.util.*;
 
 public class TreeNode{
-    private int data;
+    private Integer data;
     private TreeNode left,right;
 
     public TreeNode(){
-	this(0);
+	this.data=null;
 	left = null;
 	right = null;
     }
@@ -29,7 +29,7 @@ public class TreeNode{
 	this.right = right;
     }
 
-    public int getData(){
+    public Integer getData(){
 	return data;
     }
 

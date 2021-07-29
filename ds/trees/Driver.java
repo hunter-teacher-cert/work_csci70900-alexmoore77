@@ -6,11 +6,14 @@ public class Driver {
     public static void main(String[] args) {
 	BSTree t = new BSTree();
   
+  t.seed();
+
+  
   for (int test=0;test<25;test++)
 
   {
   
-  t.seed();
+
   
 
 //  t.search(searchValue);
@@ -25,6 +28,7 @@ catch (NullPointerException e){
 System.out.println(test+" not in tree");
 } ;
   };//for
+  
 
 
 int test=190;
