@@ -15,11 +15,13 @@ public class Node {
     public Node(String value) {
     	data = value;
     	next = null;
+
     }//constructor(value)
 
     public Node(String value, Node next) {
     	data = value;
     	this.next = next;
+
     }//constructor(value, next)
 
 public Node(String value, Node next, String message)

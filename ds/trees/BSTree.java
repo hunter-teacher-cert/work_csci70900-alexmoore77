@@ -74,7 +74,7 @@ private void deleteTraverse (int key, TreeNode current, TreeNode previous)
 if (current==null)
 return;
 
-//recursively print out the left subtree
+//recursively traverse the left subtree
 deleteTraverse(key, current.getLeft(), current);
 
 //process the current node
@@ -118,6 +118,44 @@ Check the previous node.
 */
 if (numberOfTotalChildren==0)
 {
+this.deleteNoChildren(key, current, previous);
+}//if (numberOfTotalChildren==0)
+
+/*Delete Scenario #2:  1 child
+Check the previous node.  
+-If the previous node's left child is equal to the current, set the previous node's left child to the deleted node's child.  
+-If the previous node's right child is equal to the current, set the previous node's right child to the deleted node's child.
+*/
+else if (numberOfTotalChildren==1)
+{
+
+this.deleteOneChild(key, current, previous);
+
+}//else if numberOfTotalChildren==1
+
+/*Delete Scenario #3:  2 children
+Check the previous node.  
+-If the previous node's left child is equal to the current, set the previous node's left child to the deleted node's child.  
+-If the previous node's right child is equal to the current, set the previous node's right child to the deleted node's child.
+*/
+
+else if (numberOfTotalChildren==2)
+{
+this.returnGreatestLeftAndParent (key, current, previous);
+
+}
+
+}
+else System.out.println(current.getData() + " is not the node to delete.");
+
+//recursively print out the right subtree
+deleteTraverse(key, current.getRight(), current);
+
+}
+
+//delete a TreeNode if it has no children.
+private void deleteNoChildren (int key, TreeNode current, TreeNode previous)
+{
 System.out.println(current.getData()+ " has been deleted!");
 if (previous.getRight().getData()==current.getData())
 {
@@ -129,14 +167,11 @@ else if (previous.getLeft().getData()==current.getData())
 previous.setLeft(null);
 System.out.println("Now the left child of "+previous.getData()+ " is null!");
 }//if
-}//if (numberOfTotalChildren==0)
 
-/*Delete Scenario #2:  1 child
-Check the previous node.  
--If the previous node's left child is equal to the current, set the previous node's left child to the deleted node's child.  
--If the previous node's right child is equal to the current, set the previous node's right child to the deleted node's child.
-*/
-else if (numberOfTotalChildren==1)
+}
+
+//Delete a TreeNode if it has one child.
+private void deleteOneChild (int key, TreeNode current, TreeNode previous)
 {
 System.out.println(current.getData()+ " has been deleted!");
 if (previous.getRight().getData()==current.getData() && current.getRight()!=null)
@@ -166,24 +201,56 @@ System.out.println("Now the left child of "+previous.getData()+ " is "+previous.
 
 }//else if
 
+}//method
 
 
-};//else if numberOfTotalChildren==1
+//Identify the greatest to the left (left and all the way to the right) to replace the node
+private TreeNode returnGreatestLeftAndParent (int key, TreeNode current, TreeNode previous)
+{
+int oldData=current.getData();
+previous=current;
+current=current.getLeft();
 
-/*Delete Scenario #3:  2 children
-Check the previous node.  
--If the previous node's left child is equal to the current, set the previous node's left child to the deleted node's child.  
--If the previous node's right child is equal to the current, set the previous node's right child to the deleted node's child.
-*/
+while(current.getRight()!=null)
+{
+previous=current;
+current=current.getRight();
+
+}//while
+
+System.out.println("I found the node to replace it with: "+  current.getData());
+if (current.getLeft()==null)
+System.out.println("The value of the left child is "+current.getLeft());
+
+else System.out.println("The value of the left child is "+current.getLeft().getData());
+
+if (current.getRight()==null)
+System.out.println("The value of the right child is "+current.getRight());
+
+else System.out.println("The value of the right  child is "+current.getRight().getData());
+
+System.out.println("The value of the previous node is "+previous.getData());
+
+System.out.println("This node has not yet been deleted or copied.");
+//get a pointer to the node to be deleted and copied
+
+int newData=current.getData();
 
 
-}
-else System.out.println(current.getData() + " is not the node to delete.");
+current.deleteTraverse(key, current.getLeft(), current);
 
-//recursively print out the right subtree
-deleteTraverse(key, current.getRight(), current);
+current.searchAndReplace(oldData,newData);
 
-}
+//return the node to be copied
+return current;
+
+}//method
+
+
+
+
+
+
 
 public void traverse(){
   inOrderTraverse(root);
@@ -267,6 +334,42 @@ if (current.getData()==key)
 return key;
 }//if
 else if (key>current.getData())
+{
+System.out.println("getRight");
+current=current.getRight();
+
+} //else if
+else
+{
+System.out.println("getLeft");
+
+current=current.getLeft();
+}//else
+};//while
+
+
+       throw new NullPointerException();
+    }
+
+
+//Search for the key (old node value), and replace it with the new node value.
+  public void searchAndReplace(int oldNodeValue, int newNodeValue)
+
+    {
+
+
+TreeNode current=root;
+
+while (current!=null)
+{
+
+if (current.getData()==oldNodeValue)
+
+{
+current.set(newNodeValue);
+return;
+}//if
+else if (oldNodeValue>current.getData())
 {
 System.out.println("getRight");
 current=current.getRight();
