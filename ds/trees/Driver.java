@@ -44,14 +44,48 @@ System.out.println(test+" not in tree");
 t.traverse();
 System.out.println("Now I deleteTraverse 5:");
 t.deleteTraverse(5);
+t.traverse();
 
 System.out.println("Now I deleteTraverse 0:");
 t.deleteTraverse(0);
+t.traverse();
 
 System.out.println("Now I deleteTraverse 4:");
 t.deleteTraverse(4);
+t.traverse();
+
+System.out.println("Now I deleteTraverse 8:");
+t.deleteTraverse(8);
+t.traverse();
+
+System.out.println("Now I deleteTraverse 13:");
+t.deleteTraverse(13);
+t.traverse();
+
+
+System.out.println("Now I deleteTraverse 19:");
+t.deleteTraverse(19);
+t.traverse();
+
+
+System.out.println("Now I deleteTraverse 20:");
+t.deleteTraverse(20);
+t.traverse();
+
+System.out.println("Now I deleteTraverse 22:");
+t.deleteTraverse(22);
+t.traverse();
+
+System.out.println("Now I deleteTraverse 24:");
+t.deleteTraverse(24);
+t.traverse();
+
+
+System.out.println("Now I deleteTraverse 190:");
+t.deleteTraverse(190);
+t.traverse();
+
+
+
     }
-
-
-
 }

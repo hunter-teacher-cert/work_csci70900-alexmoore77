@@ -34,7 +34,7 @@ return;
 //recursively print out the left subtree
 inOrderTraverse(current.getLeft());
 //process the current node
-System.out.print(current.getData()+", ");
+System.out.print(current.getData()+". ");
 //recursively print out the right subtree
 inOrderTraverse(current.getRight());
 }
@@ -231,15 +231,24 @@ else System.out.println("The value of the right  child is "+current.getRight().g
 
 System.out.println("The value of the previous node is "+previous.getData());
 
-System.out.println("This node has not yet been deleted or copied.");
-//get a pointer to the node to be deleted and copied
 
 int newData=current.getData();
 
 
-current.deleteTraverse(key, current.getLeft(), current);
+System.out.println("oldData"+oldData+ " will now be replaced by newData "+newData);
 
-current.searchAndReplace(oldData,newData);
+this.traverse();
+System.out.println("Call deleteTraverse");
+
+this.deleteTraverse(newData, previous, current);
+
+this.traverse();
+
+System.out.println("Call searchAndReplace");
+
+this.searchAndReplace(oldData,newData);
+
+this.traverse();
 
 //return the node to be copied
 return current;
@@ -366,7 +375,10 @@ while (current!=null)
 if (current.getData()==oldNodeValue)
 
 {
-current.set(newNodeValue);
+current.setData(newNodeValue);
+
+System.out.println("I just set the node with value "+ oldNodeValue+ " to be equal to "+newNodeValue);
+
 return;
 }//if
 else if (oldNodeValue>current.getData())
