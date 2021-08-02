@@ -39,7 +39,7 @@ front=myFirstNode;
 	currentNode = front;
 	String result = "";
 	while (currentNode != null){
-	    result = result + currentNode + "->";
+	    result = result + currentNode + "<->";
 	    // this is like i=i+1 is for arrays
 	    // but for linked lists
 	    currentNode = currentNode.getNext();
@@ -137,8 +137,7 @@ currentNode.setData(value);
     // the node BEFORE you want to do the insertion.
     public void insert(int index, String value){
 
-  DLLNode currentNode=new DLLNode("",front); //constructor; keeps track of current node
-  DLLNode previousNode=new DLLNode("",front);
+  DLLNode currentNode=new DLLNode(value,front); //constructor; keeps track of current node
   int currentIndex=0;
    
 if (index>(this.length()+1)) //if index is greater than length of list-->error
@@ -151,21 +150,20 @@ return;
 // 1) new node must point to the node after the index
 while (currentIndex <(index)){
 	    currentIndex=currentIndex+1;
+      currentNode.setPrevious(currentNode);
 	    currentNode = currentNode.getNext();
 	};
 //Now the new node is pointing to one before the index.
 
 //look at pointer, what is the address, set pointer in the new node to the next node (index specified/user provides)
 currentNode.setNext(currentNode.getNext());
+//currentNode.getPrevious().setNext(currentNode);
 
-currentIndex=0;
-// 2) node before the index must point to the new node.
-while (currentIndex <(index-1)){
-	    currentIndex=currentIndex+1;
-	    previousNode = previousNode.getNext();
-	};
+System.out.println(this);
 
-previousNode.setNext(currentNode);
+System.out.println("New node="+currentNode);
+System.out.println("Next node="+currentNode.getNext());
+System.out.println("Previous node="+currentNode.getNext().getPrevious().getPrevious());
 
     }
 
@@ -188,6 +186,34 @@ while (currentNode!=null){
     // does nothing if index out of bounds
     public void remove(int index){
 
+  DLLNode currentNode=new DLLNode("",this.front); //constructor; keeps track of current node
+  int currentIndex=0;
+   
+if (index>(this.length()+1)) //if index is greater than length of list-->error
+{
+System.out.println( "Error- Linked list length of "+this.length()+" is shorter than your index of "+index);
+return;
+};
+
+
+// 1) new node must point to the node after the index
+while (currentIndex <(index-1)){
+	    currentIndex=currentIndex+1;
+      //currentNode.setPrevious(currentNode);
+	    currentNode = currentNode.getNext();
+	};
+//Now the new node is pointing to one before the index.
+
+//look at pointer, what is the address, set pointer in the new node to the next node (index specified/user provides)
+currentNode.setNext(currentNode.getNext());
+currentNode.getNext().setPrevious(currentNode);
+//currentNode.getPrevious().setNext(currentNode);
+
+System.out.println(this);
+
+System.out.println("New node="+currentNode);
+System.out.println("Next node="+currentNode.getNext());
+System.out.println("Previous node="+currentNode.getNext().getPrevious().getPrevious());
 
 
     }
