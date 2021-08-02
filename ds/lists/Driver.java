@@ -21,7 +21,7 @@ public class Driver{
   
   Node x=new Node("x");
   x.setNext(L3);
-  L2.setNext(L2);
+  L2.setNext(x);
 
   //System.out.println(L.printList());
   /*

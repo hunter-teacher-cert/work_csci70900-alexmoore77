@@ -1,4 +1,4 @@
-//Created with Alex, Chris, and Benson
+//Created by Alex Moore
 import java.io.*;
 import java.util.*;
 

@@ -21,7 +21,7 @@ public class Knights{
     private int cols = 5;
     private int size=5;
     public int recursiveCallsOnStack=0;
-    private String clearScreen="[0;0H\n";
+    private String clearScreen="\033[H\033[2J[0;0H\n";
 
     private void delay(int n)
     {
@@ -76,13 +76,15 @@ public class Knights{
 	    }
 	    result = result +"\n";
 	};
-  result+="Recursive Calls on Stack:"+recursiveCallsOnStack+"\n";
+  result+="Recursive Calls on Stack:"+this.recursiveCallsOnStack+"\n";
 	return result;
     }
 
     public boolean solve(int col,int row, int count){
 	boolean solved = false;
 recursiveCallsOnStack++;
+ if (count>((this.size*this.size)))
+ System.out.println("Add 1 to recursive calls:"+recursiveCallsOnStack);
 
 	// This should return true when we've solved the problem
 	// What should CHANGETHIS be?
@@ -100,6 +102,8 @@ recursiveCallsOnStack++;
 	System.out.println(clearScreen+this);
 
 recursiveCallsOnStack--;
+ if (count>((this.size*this.size)))
+ System.out.println("Subtract 1 from recursive calls:"+recursiveCallsOnStack);
 	    return true;
 	}
 
@@ -110,8 +114,10 @@ recursiveCallsOnStack--;
 	// and also built that border of -1 values.
 	if (board[col][row]!=0){
 	    
+
       recursiveCallsOnStack--;
-      return false;
+  if (count>((this.size*this.size))) System.out.println("Subtract 1 from recursive calls:"+recursiveCallsOnStack);
+        return false;
 	}
 	
 
@@ -163,6 +169,8 @@ System.out.println(this);
 	board[col][row]=0;
 	
   recursiveCallsOnStack--;
+ if (count>((this.size*this.size)))    System.out.println("Subtract 1 from recursive calls:"+recursiveCallsOnStack);
+  
   return solved;
     }
 

@@ -1,4 +1,11 @@
-//Alex, Michelle, and Michelle
+/******************************************
+Doubly Linked List
+By Alexander Moore
+For Hunter College Summer 2021
+Description:  
+Accomplishments:    
+Challenges:   
+******************************************/
 import java.io.*;
 import java.util.*;
 
@@ -64,7 +71,7 @@ front=myFirstNode;
   DLLNode currentNode=new DLLNode("",front); //constructor; makes a new temp node
 
 //Loop until the last node (end of list) is reached
-  while (currentNode != null){
+  while (currentNode.getNext() != null){
 	    numberOfNodes=numberOfNodes+1;
 	
   //Most important idiom
@@ -73,7 +80,7 @@ front=myFirstNode;
   }
   
   //updated - was 0
-  return numberOfNodes-1;
+  return numberOfNodes;
     }
 
     // returns the item at location index;

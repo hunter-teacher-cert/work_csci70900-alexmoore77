@@ -157,7 +157,7 @@ while (currentIndex <(index-1)){
 	    previousNode = previousNode.getNext();
 	};
 
-previousNode.next=currentNode;
+previousNode.setNext(currentNode);
 
     }
 

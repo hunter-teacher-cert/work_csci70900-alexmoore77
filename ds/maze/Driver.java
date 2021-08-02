@@ -21,9 +21,17 @@ public class Driver{
   System.out.println("*********************************\n\n");
 
   
+System.out.println("Please select a chess board size for The Knight's Tour.");
+  Scanner myInput = new Scanner(System.in);
+  //what user types in is assigned to user
+  int choice=myInput.nextInt();
 
+Knights k = new Knights(choice);
+k.solve(2,2,1);
+/*
   Knights k = new Knights(5);
 	k.solve(2,2,1);
+*/
 //System.out.println(k);
   
 /*  
