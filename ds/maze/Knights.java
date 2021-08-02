@@ -3,8 +3,7 @@ Knight's Tour
 By Alexander Moore
 For Hunter College Summer 2021
 Description:  The program calls the solve method recursively until it finds a way for the knight to visit every square on a board of the specified size exactly once.
-Accomplishments:  I hope to create a simple chess game at some point in my life, so this has gotten me started.  It has also given me a stronger understanding of recursion in practice.  I actually found this program to be easier and more intuitive than the maze program, perhaps because I love chess.  
-Challenges:  Tried to add instance variable to count the number of recursive calls on the stack and print along with the board, but was not working as intended, so I walked away.  The toString() method slowed down the program too much, so I set it to be called near the end. Did not determine how to call it exactly once at the very end. 
+Accomplishments:  I hope to create a simple chess game at some point in my life, so this has gotten me started.  It has also given me a stronger understanding of recursion in practice.  I actually found this program to be easier and more intuitive than the maze program, perhaps because I love chess.  I added a count of recursive calls on the stack to the program.  Also allowed the user to select the size of the board and whether to display the board and the number of recursive calls.
 ******************************************/
 
 import java.io.*;
@@ -22,6 +21,7 @@ public class Knights{
     private int size=5;
     public int recursiveCallsOnStack=0;
     private String clearScreen="\033[H\033[2J[0;0H\n";
+    public boolean visuals=false;
 
     private void delay(int n)
     {
@@ -82,9 +82,9 @@ public class Knights{
 
     public boolean solve(int col,int row, int count){
 	boolean solved = false;
-recursiveCallsOnStack++;
- if (count>((this.size*this.size)))
- System.out.println("Add 1 to recursive calls:"+recursiveCallsOnStack);
+this.recursiveCallsOnStack++;
+ if (this.visuals==true)
+ System.out.println("Add 1 to recursive calls to stack:"+recursiveCallsOnStack);
 
 	// This should return true when we've solved the problem
 	// What should CHANGETHIS be?
@@ -99,11 +99,11 @@ recursiveCallsOnStack++;
   {
 
 //Use only printing at the end to improve efficiency
-	System.out.println(clearScreen+this);
+  System.out.println(clearScreen+this);
 
-recursiveCallsOnStack--;
- if (count>((this.size*this.size)))
- System.out.println("Subtract 1 from recursive calls:"+recursiveCallsOnStack);
+this.recursiveCallsOnStack--;
+ //if (count>((this.size*this.size)))
+ System.out.println("Subtract 1 from recursive calls on stack:"+recursiveCallsOnStack);
 	    return true;
 	}
 
@@ -115,8 +115,9 @@ recursiveCallsOnStack--;
 	if (board[col][row]!=0){
 	    
 
-      recursiveCallsOnStack--;
-  if (count>((this.size*this.size))) System.out.println("Subtract 1 from recursive calls:"+recursiveCallsOnStack);
+      this.recursiveCallsOnStack--;
+  if (count>((this.size*this.size))) 
+  System.out.println("Subtract 1 from recursive calls on stack:"+recursiveCallsOnStack);
         return false;
 	}
 	
@@ -129,10 +130,11 @@ recursiveCallsOnStack--;
 count++;
 
 //print the board only once at the end
-/*
-if (count==(this.size*this.size))
+
+//if (count==(this.size*this.size))
+if (this.visuals==true)
 System.out.println(this);
-*/
+
 //Cut delay to improve efficiency
 
 //delay(1);
@@ -168,8 +170,11 @@ System.out.println(this);
 	
 	board[col][row]=0;
 	
-  recursiveCallsOnStack--;
- if (count>((this.size*this.size)))    System.out.println("Subtract 1 from recursive calls:"+recursiveCallsOnStack);
+  this.recursiveCallsOnStack--;
+ 
+ //if (count>((this.size*this.size)))
+     if (this.visuals==true)
+     System.out.println("Subtract 1 from recursive calls on stack:"+this.recursiveCallsOnStack);
   
   return solved;
     }
