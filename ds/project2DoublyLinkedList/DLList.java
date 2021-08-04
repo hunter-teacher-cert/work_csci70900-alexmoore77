@@ -2,9 +2,8 @@
 Doubly Linked List
 By Alexander Moore
 For Hunter College Summer 2021
-Description:  
-Accomplishments:    
-Challenges:   
+Description:  Doubly Linked List Class - similar to Linked List class but with addition of the previous instance variable to the DLLNode class that allows for greater functionality in DLList methods.
+Accomplishments:  It was extremely difficult to code the pointers so that they behaved as desired.  I ended up creating a user interface as part of the testing process that I left in the program.   
 ******************************************/
 import java.io.*;
 import java.util.*;
