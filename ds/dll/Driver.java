@@ -19,7 +19,7 @@ public class Driver{
   DLLNode L5 = new DLLNode("e");
   L4.setNext(L5);
   L4.setPrevious(L3);
-
+/*
   //2. Write the code to insert an "x" between the b and the c
 
 System.out.println("DLLNode a="+L1);
@@ -99,7 +99,8 @@ ll5Items.remove(2);
 System.out.println("------------");
 System.out.println(ll5Items);
 System.out.println("------------");
-
+*/
+DLList userDLL=new DLList(L1);
 
   System.out.println("*********************************");
   System.out.println("          Doubly Linked List");
@@ -108,20 +109,60 @@ System.out.println("------------");
   System.out.println("*********************************\n\n");
 
 //System.out.println(">>Current List:\n"+userDLL);  
-System.out.println(">>Select a command:\n1) userDLL.length()\n2) userDLL.isEmpty()\n3) userDLL.delete(index i)\n4)userDLL.insert(String s, index i)\n5)userDLL.toString()\n6)get()\n7) getData()\n8)setData()\n9) insert() \n10) remove()\n11) search()"); 
- /*
+int choice=-1;
+
+while (choice!=0)
+{
+
+System.out.println(">>Select a command:\n1)userDLL.length()\n2)userDLL.isEmpty()\n3)search(\"Hello\")\n4)userDLL.toString()\n5)userDLL.insert(\"Hello\", 1)\n6)userDLL.delete(1)\n0)END PROGRAM"); 
+ 
   Scanner myInput = new Scanner(System.in);
-  Scanner myInput2=new Scanner(System.in);
+ // Scanner myInput2=new Scanner(System.in);
 
   //what user types in is assigned to user
-  int choice=myInput.nextInt();
-  int choice2=2;
+  //int choice=myInput.nextInt();
+  //int choice2=2;
 
-System.out.println("Would you like to see the recursive stack calls and chess board, which slows down the program?  Enter 1 for Yes and 2 for No.");
 
-choice2 =myInput.nextInt();
+
+choice=myInput.nextInt();
+
+switch (choice)
+{
+case 1: 
+System.out.print("Output>> "+userDLL.length()+"\n");
+break;
+case 2:  System.out.print("Output>> "+userDLL.isEmpty()+"\n");
+break;
+case 3:  System.out.print("Output>> "+userDLL.search("Hello")+"\n");
+break;
+case 4:  System.out.print("Output>> "+userDLL.toString()+"\n");
+break;
+case 5:  System.out.print("Output>> [void]\n");userDLL.insert(1, "Hello");
+break;
+case 6:  System.out.print("Output>> [null - void method]\n");
+userDLL.remove(1);
+break;
+case 0:
+break;
+default:  System.out.println("Please select an option from the menu.");
+break;
+
+};//switch
+
+System.out.println("List after command: "+userDLL+"\n\n\n");
+/*
+System.out.println("Hit enter to continue.");
+String s=myInput.next;
 */
+}//while
 
+
+/*
+Scanner hitEnter = new Scanner(System.in);
+
+int hitAKey=hitEnter.nextInt();
+*/
 
   }// main
 }//end class
