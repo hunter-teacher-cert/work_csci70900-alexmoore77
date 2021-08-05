@@ -1,4 +1,10 @@
-
+/******************************************
+Queue
+By Alexander Moore
+For Hunter College Summer 2021
+Description:  This data structure requires two classes, Queue and QueueNode, which are run within the main method of a QueueDriver class.  The data structure follow FILO behavior - first in, last out; this is in contrast to the FIFO behavior of the stack.    
+Accomplishments:  Unlike the doubly linked list, which was extremely frustrating, I was able to code this entire project in just a few hours using most of the same principles I learned about in our work with Linked Lists.  The only major challenge for this oen was handling the toString() so that it included the terminating null and getting the pointer to end update to the penultimate QueueNode after a dequeue(). 
+******************************************/
 
 public class Queue{
 
