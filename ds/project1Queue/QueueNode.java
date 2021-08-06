@@ -1,3 +1,9 @@
+/*
+Last name: Moore
+First name: Alexander
+Github username: alexmoore77
+QueueNode:  This is similar but not identical to the Node for the LinkedList class.
+*/
 
 //This is the QueueNode class for the class Queue
 public class QueueNode

@@ -1,4 +1,11 @@
+/*
+Last name: Moore
+First name: Alexander
+Github username: alexmoore77
+Fib - Day[6]
 //AlexMoore,Emma Wingreen, Stephannia Kabanakis
+*/
+
 public class Fib {
 
   public static void main(String[] args) {

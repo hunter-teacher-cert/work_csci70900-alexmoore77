@@ -1,3 +1,10 @@
+/*
+Last name: Moore
+First name: Alexander
+Github username: alexmoore77
+Driver for Mode.  Tiffany had some great ideas for the data structure for this one that were aligned with the suggested solution!
+DLLNode
+*/
 //Created by Alex Moore
 import java.io.*;
 import java.util.*;

@@ -1,7 +1,13 @@
 //Alex, Michelle, and Michelle
 import java.io.*;
 import java.util.*;
+/*
+Last name: Moore
+First name: Alexander
+Github username: alexmoore77
+LList
 
+*/
 
 public class Llist{
     private Node front; // the front of the list

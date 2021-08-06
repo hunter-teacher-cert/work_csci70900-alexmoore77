@@ -1,6 +1,11 @@
 import java.io.*;
 import java.util.*;
-
+/*
+Last name: Moore
+First name: Alexander
+Github username: alexmoore77
+Driver for Knight's Tour built after successful completion of Maze
+*/
 public class Driver{
 
     public static void main(String[] args) {

@@ -2,8 +2,8 @@
 Last name: Moore
 First name: Alexander
 Github username: alexmoore77
-Game of Nim - Day[1]
-Team:  Alex Moore, Alex Moore, Daiana Munoz, Eduardo Leite
+CGOL - Day[4]
+Team:  Alex Moore, Daiana Munoz, Eduardo Leite
 Objective:  Create a Game of Mancala with a working AI.  
 Skills:  arrays, loops, collaboration
 Comments:  We worked well together as a group, and everyone had something to contribute.  The greatest learning experience was a challenge:  We had difficulty debugging the code.  There were some clerical errors that we eventually cleared up, but the biggest mistake was one of logic:  We had to add all of the rules before expecting the behavior of a program governed by all of the rules.  Once we realized this, everything came together.

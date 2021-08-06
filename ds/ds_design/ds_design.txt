@@ -1,7 +1,13 @@
+/*
+Last name: Moore
+First name: Alexander
+Github username: alexmoore77
+DS Design
+
 //Group Alex Moore, Emma, Mr. H, Marina, Eduardo
 
 Add a file or files into your repo describing this data structure and the algorithms for the operations.
-
+*/
 
 Classes:
 - Person (instance variables: String lastName, String firstName, String phoneNumber)

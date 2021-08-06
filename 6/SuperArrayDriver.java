@@ -1,5 +1,11 @@
 // Alex Moore and Benson Leung
+/*
+Last name: Moore
+First name: Alexander
+Github username: alexmoore77
+SuperArrayDriver - Day[6]
 
+*/
 import java.io.*;
 import java.util.*;
 

@@ -2,7 +2,7 @@
 Last name: Moore
 First name: Alexander
 Github username: alexmoore77
-Game of Nim - Day[1]
+TwoDimArray - Day[3]
 Team:  Alex Moore, Alex Moore, Daiana Munoz, Eduardo Leite
 Objective:  Create a Game of Mancala with a working AI.  
 Skills:  arrays, loops, collaboration

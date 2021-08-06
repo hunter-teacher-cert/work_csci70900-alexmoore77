@@ -1,4 +1,11 @@
 //Initial version created by Alex Moore, Liam Baum, and JiYoon Kim
+/*
+Last name: Moore
+First name: Alexander
+Github username: alexmoore77
+SortDemo
+*/
+
 import java.io.*;
 import java.util.*;
 

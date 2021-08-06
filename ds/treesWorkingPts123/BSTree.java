@@ -1,3 +1,10 @@
+/*
+Last name: Moore
+First name: Alexander
+Github username: alexmoore77
+Note:  It took me a _very_ long time to figure this out, but I believe I successfully completed all components of the BSTree assignment!  I wanted to get it because I did not understand trees well in my original data structures class in college, and I really wanted to make sense of them for teaching and possibly for programming as well; however, I mostly use SQL when working with databases.
+*/
+
 import java.io.*;
 import java.util.*;
 

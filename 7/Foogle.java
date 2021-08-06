@@ -1,6 +1,10 @@
 /**
    Alex Moore and Benson Leung
-   
+  Last name: Moore
+First name: Alexander
+Github username: alexmoore77
+Foogle - Day[7]
+
    lab -- Day 7 | 0b111 | 0x7
 
    class: Foogle

@@ -1,3 +1,10 @@
+/*
+Last name: Moore
+First name: Alexander
+Github username: alexmoore77
+DS Design
+Maze:  I love this program!!!  The recursion is so awesome.
+*/
 import java.io.*;
 import java.util.*;
 

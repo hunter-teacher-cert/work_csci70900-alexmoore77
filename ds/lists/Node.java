@@ -1,6 +1,14 @@
 //Created with Alex, Chris, and Benson
 import java.io.*;
 import java.util.*;
+/*
+
+Last name: Moore
+First name: Alexander
+Github username: alexmoore77
+Node
+*/
+
 
 public class Node {
 

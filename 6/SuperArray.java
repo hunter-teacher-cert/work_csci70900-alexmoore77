@@ -1,6 +1,9 @@
 /**
   Alex Moore and Benson Leung
-
+Last name: Moore
+First name: Alexander
+Github username: alexmoore77
+SuperArray - Day[6]
   Need to still remove empty values 
 
   Is a constructor created by default?
